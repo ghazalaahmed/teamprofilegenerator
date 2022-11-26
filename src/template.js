@@ -1,7 +1,6 @@
 const fs = require("fs");
 
 function employeeCard(passedObject) {
-  //consider destructuring
   let variable;
   ({ name, id, email, officeNumber, github, school } = passedObject);
 
@@ -31,7 +30,6 @@ function employeeCard(passedObject) {
 function howMany(passedObjectArray) {
   let ret = "";
   console.log(passedObjectArray);
-  // console.log(passedObjectArray.length)
   for (i = 0; i < passedObjectArray.length; i++) {
     console.log(`${i}`);
     console.log(passedObjectArray[i]);

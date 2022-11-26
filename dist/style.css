@@ -60,6 +60,7 @@ main {
 }
 .id {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     background-color: white;
@@ -69,6 +70,7 @@ main {
 }
 .email {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     background-color: white;
@@ -78,6 +80,7 @@ main {
 }
 .variable {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     background-color: white;
