@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/ghazalaahmed/teamprofilegenerator/issues"
   },
-  "homepage": "https://github.com/ghazalaahmed/teamprofilegenerator#readme"
+  "homepage": "https://github.com/ghazalaahmed/teamprofilegenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }
+

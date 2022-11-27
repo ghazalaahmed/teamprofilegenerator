@@ -26,7 +26,7 @@ const addManager = () => {
         message: "What is the manager's ID.",
         validate: (answer) => {
           if (answer !== "") {
-            return false;
+            return true;
           }
           return "Please enter at least one character.";
         },
@@ -60,6 +60,7 @@ const addManager = () => {
 
       teamArray.push(manager);
       console.log(manager);
+      addEmployee();
     });
 };
 
@@ -92,7 +93,7 @@ const addEmployee = () => {
         message: "Please enter the employee's ID.",
         validate: (answer) => {
           if (answer !== "") {
-            return false;
+            return true;
           }
           return "Please enter at least one character.";
         },
@@ -174,14 +175,4 @@ const writeFile = (data) => {
   });
 };
 
-addManager()
-  .then(addEmployee)
-  .then((teamArray) => {
-    return generateHTML(teamArray);
-  })
-  .then((pageHTML) => {
-    return writeFile(pageHTML);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+addManager();
