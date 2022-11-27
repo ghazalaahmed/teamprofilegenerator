@@ -13,52 +13,47 @@ const addManager = () => {
         type: "input",
         name: "name",
         message: "Who is the manager",
-        validate: (nameInput) => {
-          if (nameInput) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else {
-            return false;
           }
+          return "Please enter at least one character.";
         },
       },
       {
         type: "input",
         name: "id",
         message: "What is the manager's ID.",
-        validate: (nameInput) => {
-          if (isNaN(nameInput)) {
+        validate: (answer) => {
+          if (answer !== "") {
             return false;
-          } else {
-            return true;
           }
+          return "Please enter at least one character.";
         },
       },
       {
         type: "input",
         name: "email",
         message: "What is the manager's email.",
-        validate: (email) => {
-          valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-          if (valid) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else {
-            return false;
           }
+          return "Please enter at least one character.";
         },
       },
       {
         type: "input",
         name: "officeNumber",
         message: "What is the manager's office number",
-        validate: (nameInput) => {
-          if (isNaN(nameInput)) 
-            return false;
-          } else {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
           }
+          return "Please enter at least one character.";
         },
       },
-
+    ])
     .then((managerInput) => {
       const { name, id, email, officeNumber } = managerInput;
       const manager = new Manager(name, id, email, officeNumber);
@@ -84,37 +79,33 @@ const addEmployee = () => {
         type: "input",
         name: "name",
         message: "What's the name of the employee?",
-        validate: (nameInput) => {
-          if (nameInput) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else {
-            return false;
           }
+          return "Please enter at least one character.";
         },
       },
       {
         type: "input",
         name: "id",
         message: "Please enter the employee's ID.",
-        validate: (nameInput) => {
-          if (isNaN(nameInput)) {
+        validate: (answer) => {
+          if (answer !== "") {
             return false;
-          } else {
-            return true;
           }
+          return "Please enter at least one character.";
         },
       },
       {
         type: "input",
         name: "email",
         message: "Please enter the employee's email.",
-        validate: (email) => {
-          valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-          if (valid) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else {
-            return false;
           }
+          return "Please enter at least one character.";
         },
       },
       {
@@ -122,11 +113,11 @@ const addEmployee = () => {
         name: "github",
         message: "Please enter the employee's github username.",
         when: (input) => input.role === "Engineer",
-        validate: (nameInput) => {
-          if (nameInput) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else 
           }
+          return "Please enter at least one character.";
         },
       },
       {
@@ -134,11 +125,11 @@ const addEmployee = () => {
         name: "school",
         message: "Please enter name of the intern's school",
         when: (input) => input.role === "Intern",
-        validate: (nameInput) => {
-          if (nameInput) {
+        validate: (answer) => {
+          if (answer !== "") {
             return true;
-          } else {
           }
+          return "Please enter at least one character.";
         },
       },
       {
