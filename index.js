@@ -3,6 +3,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateHTML = require("./src/template.js");
 
 const teamArray = [];
 
@@ -160,7 +161,7 @@ const addEmployee = () => {
       if (confirmAddEmployee) {
         return addEmployee(teamArray);
       } else {
-        return teamArray;
+        end();
       }
     });
 };
@@ -176,3 +177,8 @@ const writeFile = (data) => {
 };
 
 addManager();
+
+const end = async () => {
+  const html = await generateHTML(teamArray);
+  writeFile(html);
+};
